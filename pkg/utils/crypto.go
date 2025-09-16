@@ -150,7 +150,7 @@ func ParseTickSize(tickSize types.TickSize) float64 {
 	case types.TickSize00001:
 		return 0.0001
 	default:
-		return 0.01
+        return 0, fmt.Errorf("unsupported tick size: %s", tickSize)
 	}
 }
 
